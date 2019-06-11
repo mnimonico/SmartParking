@@ -1,0 +1,40 @@
+﻿@model ProjetoSmartParking.Models.Vaga
+
+@{
+    ViewBag.Title = "Remover";
+}
+
+<h2>Remover vaga</h2>
+
+<h3>Você tem certeza disso?</h3><br />
+<h3>Eu não faria!</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Remover" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar para o início", "Index")
+        </div>
+    }
+</div>

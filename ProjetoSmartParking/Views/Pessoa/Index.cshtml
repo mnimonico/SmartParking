@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ProjetoSmartParking.Models.Pessoa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Smart Parking</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Cadastrar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDeAcesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDeAcesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataNascimento)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.PessoaId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.PessoaId }) |
+            @Html.ActionLink("Remover", "Remover", new { id=item.PessoaId })
+        </td>
+    </tr>
+}
+
+</table>

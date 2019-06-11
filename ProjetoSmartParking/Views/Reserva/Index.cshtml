@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjetoSmartParking.Models.Reserva>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Smart Parking</h2>
+
+<p>
+    @Html.ActionLink("Realizar reserva", "Cadastrar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusPagamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Entrada)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saida)
+        </th>
+       
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusPagamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Entrada)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Saida)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Editar", "Editar", new { id=item.ReservaId }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.ReservaId }) |
+            @Html.ActionLink("Remover", "Remover", new { id=item.ReservaId })
+        </td>
+    </tr>
+}
+
+</table>

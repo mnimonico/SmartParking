@@ -1,0 +1,42 @@
+﻿@model ProjetoSmartParking.Models.Setor
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Piso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Piso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ala)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ala)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.SetorId }) |
+    @Html.ActionLink("Voltar para o início", "Index")
+</p>

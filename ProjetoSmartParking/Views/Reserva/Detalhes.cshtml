@@ -1,0 +1,41 @@
+﻿@model ProjetoSmartParking.Models.Reserva
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusPagamento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusPagamento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Entrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Entrada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Saida)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Saida)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.ReservaId }) |
+    @Html.ActionLink("Voltar para o início", "Index")
+</p>
